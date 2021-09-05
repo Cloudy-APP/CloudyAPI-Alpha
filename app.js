@@ -2,6 +2,8 @@
 const express = require('express')
 const path = require('path');
 const history = require('connect-history-api-fallback');
+const cors = require('cors')
+const multer = require('multer')
 
 // consts
 const app = express()
@@ -13,6 +15,9 @@ require('./database/mongoose')
 //parser
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+//cors
+app.use(cors())
 
 // api-routing
 const accrouter = require('./routes/accounts')
