@@ -15,8 +15,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // api-routing
-const apiRouter = require('./routes/api')
-app.use('/api', apiRouter)
+const accrouter = require('./routes/accounts')
+app.use('/api/accounts', accrouter)
+const filesrouter = require('./routes/files')
+app.use('/api/files', filesrouter)
 
 // frontend-routing
 app.use(history());
