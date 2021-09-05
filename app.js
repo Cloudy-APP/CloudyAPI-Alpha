@@ -10,6 +10,10 @@ const { port } = require('./config/config')
 // database
 require('./database/mongoose')
 
+//parser
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // api-routing
 const apiRouter = require('./routes/api')
 app.use('/api', apiRouter)
