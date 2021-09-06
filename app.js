@@ -3,7 +3,8 @@ const express = require('express')
 const path = require('path');
 const history = require('connect-history-api-fallback');
 const cors = require('cors')
-const multer = require('multer')
+const sharp = require('sharp')
+const fs = require('fs')
 
 // consts
 const app = express()
@@ -28,6 +29,8 @@ app.use('/api/files', filesrouter)
 // frontend-routing
 app.use(history());
 app.use(express.static(__dirname + "/static"));
+
+//others
 
 // listening
 app.listen(port, (err) => {
