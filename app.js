@@ -1,9 +1,7 @@
 // libs
 const express = require('express')
-const path = require('path');
 const history = require('connect-history-api-fallback');
 const cors = require('cors')
-const sharp = require('sharp')
 const fs = require('fs')
 
 // consts
@@ -23,7 +21,7 @@ app.use(cors())
 // api-routing
 const accrouter = require('./routes/accounts')
 app.use('/api/accounts', accrouter)
-const filesrouter = require('./routes/files')
+const filesrouter = require('./routes/upload')
 app.use('/api/files', filesrouter)
 
 // frontend-routing
